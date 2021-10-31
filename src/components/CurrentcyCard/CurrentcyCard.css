@@ -1,0 +1,18 @@
+.currentcyCard {
+	display: none;
+}
+
+.currentcyCard_visible {
+	margin-top: 30px;
+	display: flex;
+}
+
+.currentcyCard__image {
+	border: 1px solid #000000;
+}
+
+.currentcyCard__container {
+	margin-left: 30px;
+	display: flex;
+	flex-direction: column;
+}

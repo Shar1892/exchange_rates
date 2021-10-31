@@ -1,0 +1,67 @@
+{
+	"name": "pbf_gruop_exchange_rates",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "./",
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^12.8.3",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3",
+		"web-vitals": "^1.1.2"
+	},
+	"main": "electron/main.js",
+	"productName": "Приложения Electron",
+	"scripts": {
+		"start": "set BROWSER=none && react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"electron": "electron .",
+		"electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+		"build-electron": "mkdir build/electron && robocopy electron build/electron /S",
+		"package": "electron-builder build --mac --win -c.extraMetadata.main=build/electron/main.js --publish never"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"electron": "^15.3.0",
+		"electron-builder": "^22.13.1",
+		"electron-packager": "^15.4.0"
+	},
+	"build": {
+		"win": {
+			"icon": "build/icon.ico"
+		},
+		"mac": {
+			"icon": "build/icon.png"
+		},
+		"files": [
+			"build/**/*",
+			"node_modules/**/*"
+		],
+		"publish": {
+			"provider": "github",
+			"repo": "electron-cra-example",
+			"owner": "johndyer24"
+		}
+	}
+}
